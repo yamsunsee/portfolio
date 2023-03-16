@@ -5,21 +5,21 @@
 @layer base {
   @font-face {
     font-family: "Be Vietnam Pro";
-    src: url("./fonts/BeVietnamPro-Regular.ttf");
+    src: url("/fonts/BeVietnamPro-Regular.ttf");
     font-weight: 400;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Be Vietnam Pro";
-    src: url("./fonts/BeVietnamPro-Black.ttf");
+    src: url("/fonts/BeVietnamPro-Black.ttf");
     font-weight: 900;
     font-style: normal;
   }
 
   @font-face {
     font-family: "HelloKetta";
-    src: url("./fonts/HelloKetta-Regular.ttf") format("truetype");
+    src: url("/fonts/HelloKetta-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
   }

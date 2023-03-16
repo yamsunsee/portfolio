@@ -76,7 +76,7 @@ export default {
                     class="w-8 object-contain"
                     v-for="stack in project.stacks"
                     :key="stack"
-                    :src="`/images/${stack}.png`"
+                    :src="`./images/${stack}.png`"
                     :alt="stack"
                     width="32"
                     height="32"
@@ -85,7 +85,7 @@ export default {
                 </div>
               </div>
               <img
-                :src="`/images/${project.lowercase}.png`"
+                :src="`./images/${project.lowercase}.png`"
                 :alt="project.title"
                 class="w-full rounded"
                 width="1920"

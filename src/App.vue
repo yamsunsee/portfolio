@@ -11,8 +11,10 @@ export default {
     return {
       name: "The Hien",
       url: "https://yamdev.info",
-      quote: "Like a spider, I strive to be a good web developer. But I do not like bugs much!",
-      quote2: "Many thanks for giving me the opportunity to share my passion with you!",
+      quote:
+        "Like a spider, I strive to be a good web developer. But I do not like bugs much!",
+      quote2:
+        "Many thanks for giving me the opportunity to share my passion with you!",
       projects: [
         {
           title: "Yamonus",
@@ -107,4 +109,3 @@ export default {
     <Footer :name="name" :quote="quote2" />
   </div>
 </template>
-
