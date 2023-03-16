@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Be Vietnam Pro";
+    src: url("./fonts/BeVietnamPro-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Be Vietnam Pro";
+    src: url("./fonts/BeVietnamPro-Black.ttf");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "HelloKetta";
+    src: url("./fonts/HelloKetta-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply select-none font-main font-black text-neutral-700 dark:text-neutral-300;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  section {
+    @apply scroll-mt-20;
+  }
+
+  h1 {
+    @apply text-shadow text-4xl uppercase tracking-widest text-white sm:text-5xl lg:text-6xl xl:text-7xl;
+  }
+
+  h2 {
+    @apply relative mb-12 lg:mb-20;
+  }
+
+  h2 > div {
+    @apply text-center text-6xl md:text-8xl uppercase tracking-widest text-black/10 dark:text-white/10 sm:tracking-[.5em];
+  }
+
+  h2 > div > span {
+    @apply tracking-[0em] text-black/10 dark:text-white/10;
+  }
+
+  h2 > i {
+    @apply text-shadow-light dark:text-shadow absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform text-center font-sub text-4xl md:text-5xl lg:text-6xl leading-10 tracking-widest;
+  }
+
+  #contact h2 > i {
+    @apply text-shadow-light;
+  }
+
+  h3 {
+    @apply text-2xl uppercase tracking-widest;
+  }
+
+  q {
+    @apply text-shadow font-sub text-4xl font-normal italic text-white md:text-5xl lg:text-6xl;
+  }
+
+  p {
+    @apply text-lg font-normal;
+  }
+}
+
+@layer components {
+  /* Flexbox */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  .flex-col-center {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  /* Container */
+  .container {
+    @apply max-w-[96rem] px-4 py-4 md:px-8 xl:px-12 2xl:px-0;
+  }
+
+  /* Backgrounds */
+  .bg-hero-lightTheme {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+      url("/images/light.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-hero-darkTheme {
+    background-image: url("/images/dark.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-contact-lightTheme {
+    background: linear-gradient(to right, rgba(22, 160, 133, 0.8), rgba(22, 160, 133, 0.8)),
+      url("/images/background.png");
+  }
+
+  .bg-contact-darkTheme {
+    background: linear-gradient(to right, rgba(0, 113, 88, 0.8), rgba(0, 113, 88, 0.8)), url("/images/background.png");
+  }
+
+  /* Buttons */
+  .button {
+    @apply flex w-full items-center justify-center rounded bg-white px-8 py-6 text-base font-black uppercase leading-4 tracking-widest text-neutral-500 transition hover:drop-shadow-2xl dark:text-neutral-300 dark:hover:drop-shadow-[0_25px_25px_rgb(255,255,255,0.15)] md:w-fit xl:px-12;
+  }
+
+  .button.theme {
+    @apply bg-lightTheme text-white dark:bg-darkTheme;
+  }
+
+  .button.white {
+    @apply text-neutral-800 lg:w-fit;
+  }
+
+  .button.gray {
+    @apply dark:bg-neutral-800;
+  }
+
+  .button.black {
+    @apply dark:bg-neutral-900;
+  }
+
+  .button.border {
+    @apply border-2 border-neutral-500 dark:border-neutral-800;
+  }
+
+  .button.border.black {
+    @apply dark:border-neutral-900;
+  }
+
+  /* Navigations */
+  nav > ul {
+    @apply fixed inset-0 mt-20 flex h-screen translate-x-full transform flex-col items-end gap-8 bg-gradient-to-r from-transparent via-white to-white px-4 py-8 drop-shadow transition duration-300 dark:via-neutral-900 dark:to-neutral-900 md:px-8 lg:relative lg:mt-0 lg:h-fit lg:translate-x-0 lg:flex-row lg:items-center lg:justify-between lg:gap-20 lg:p-0 lg:drop-shadow-none;
+  }
+
+  nav > ul.active {
+    @apply translate-x-0;
+  }
+
+  /* Links */
+  .link {
+    @apply relative flex items-center text-lg uppercase tracking-widest before:absolute before:top-0 before:-left-2 before:-z-10 before:h-full before:w-0 before:rounded before:bg-lightTheme before:transition-all hover:text-white before:hover:w-[calc(100%+0.8rem)] dark:before:bg-darkTheme;
+  }
+
+  .link.selected {
+    @apply text-lightTheme hover:text-amber-300 dark:text-darkTheme dark:hover:text-amber-300;
+  }
+
+  /* Icons */
+  .icons {
+    @apply aspect-square w-6 cursor-pointer invert-[.2] transition-all duration-300 ease-out dark:invert-[.8];
+  }
+
+  .icons.white {
+    @apply invert dark:invert;
+  }
+
+  .icons:hover {
+    transform: rotateZ(-360deg) scale(1.2);
+  }
+
+  /* Text Shadow */
+  .text-shadow-light {
+    text-shadow: 2px 2px 4px #0004;
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 4px #000c;
+  }
+
+  /* Highlight */
+  .highlight {
+    @apply font-sub text-lightTheme;
+  }
+
+  #contact span.highlight {
+    @apply font-sub text-lime-300;
+  }
+
+  /* Scrollbar */
+  .scrollbar {
+    @apply before:absolute before:left-0 before:bottom-0 before:h-1 before:bg-lightTheme before:drop-shadow dark:before:bg-darkTheme;
+  }
+
+  .scrollbar::before {
+    width: var(--value);
+  }
+
+  /* Categories */
+  .category {
+    @apply cursor-pointer rounded-t-lg border border-b-0 p-4 text-lg uppercase text-neutral-500 hover:text-neutral-700 dark:border-neutral-800 dark:text-neutral-700 dark:hover:text-neutral-500 md:py-2 lg:px-8;
+  }
+
+  .category.selected {
+    @apply border-lightTheme bg-lightTheme text-white hover:text-white dark:border-darkTheme dark:bg-darkTheme;
+  }
+
+  /* Menu */
+  .menu {
+    @apply relative h-4 w-6 cursor-pointer before:absolute before:top-0 before:left-0 before:h-1 before:w-full before:rounded before:bg-neutral-700 before:drop-shadow-[0_6px] before:transition before:delay-100 before:duration-300 after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-neutral-700 after:transition after:duration-300 dark:before:bg-white dark:after:bg-white lg:hidden;
+  }
+
+  .menu.active {
+    @apply before:translate-y-[6px] before:rotate-[135deg] before:transform before:drop-shadow-none after:translate-y-[-6px] after:rotate-[-135deg] after:transform;
+  }
+}
+
