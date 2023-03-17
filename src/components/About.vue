@@ -1,7 +1,29 @@
 <script>
 export default {
+  data() {
+    return {
+      skills: [
+        "HTML",
+        "Pug",
+        "CSS",
+        "Sass",
+        "TailwindCSS",
+        "Javascript",
+        "ReactJS",
+        "VueJS",
+        "Electron",
+        "NodeJS",
+        "Express",
+        "SocketIO",
+        "MongoDB",
+        "Git",
+        "Python",
+      ],
+    };
+  },
+
   mounted() {
-    TagCloud("#skills", Array(15).fill(""), {
+    TagCloud("#skills", Array(this.skills.length).fill(""), {
       radius: 200,
       maxSpeed: "fast",
       initSpeed: "normal",
@@ -61,7 +83,24 @@ export default {
         </div>
         <div>
           <h3>My skills</h3>
-          <div id="skills" class="flex-center"></div>
+          <div id="skills" class="flex-center hidden md:flex"></div>
+          <div class="mt-4 flex flex-wrap justify-center gap-4 md:hidden">
+            <div
+              v-for="skill in skills"
+              :key="skill"
+              class="flex w-32 items-center justify-center gap-2 rounded border bg-white p-4 text-xs dark:border-neutral-800 dark:bg-neutral-800 sm:w-48 sm:text-base"
+            >
+              <img
+                :src="`./images/${skill.toLowerCase()}.png`"
+                :alt="skill"
+                width="32"
+                height="32"
+                loading="lazy"
+                class="h-4 w-4 object-contain sm:h-8 sm:w-8"
+              />
+              <div>{{ skill }}</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -102,7 +102,7 @@ export default {
           {{ name }}
         </div>
       </a>
-      <nav class="relative">
+      <nav>
         <div @click="handleToggleMenu" :class="['menu', { active: isShow }]"></div>
         <ul :class="{ active: isShow }">
           <li
