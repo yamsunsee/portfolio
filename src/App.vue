@@ -98,6 +98,7 @@ export default {
 </script>
 
 <template>
+  <div class="contain-paint">
     <Header :name="name" :url="url" />
     <main>
       <Home :name="name" :quote="quote" />
@@ -106,4 +107,5 @@ export default {
       <Contact />
     </main>
     <Footer :name="name" :quote="quote2" />
+  </div>
 </template>

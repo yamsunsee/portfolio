@@ -78,6 +78,11 @@
 }
 
 @layer components {
+  /* Contain paint */
+  .contain-paint {
+    contain: paint;
+  }
+
   /* Flexbox */
   .flex-center {
     @apply flex items-center justify-center;
@@ -152,7 +157,7 @@
 
   /* Navigations */
   nav > ul {
-    @apply fixed inset-0 mt-20 flex h-screen translate-x-full transform flex-col items-end gap-8 bg-gradient-to-r from-transparent via-white to-white px-4 py-8 drop-shadow transition duration-300 dark:via-neutral-900 dark:to-neutral-900 md:px-8 lg:relative lg:mt-0 lg:h-fit lg:translate-x-0 lg:flex-row lg:items-center lg:justify-between lg:gap-20 lg:p-0 lg:drop-shadow-none;
+    @apply absolute inset-0 mt-20 flex h-screen translate-x-full transform flex-col items-end gap-8 bg-gradient-to-r from-transparent via-white to-white px-4 py-8 drop-shadow transition duration-300 dark:via-neutral-900 dark:to-neutral-900 md:px-8 lg:relative lg:mt-0 lg:h-fit lg:translate-x-0 lg:flex-row lg:items-center lg:justify-between lg:gap-20 lg:p-0 lg:drop-shadow-none;
   }
 
   nav > ul.active {

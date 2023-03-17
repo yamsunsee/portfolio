@@ -43,7 +43,8 @@ export default {
 
     handleScroll() {
       const sections = document.querySelectorAll("section");
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = window.scrollY;
 
       const value = (scrolled * 100) / scrollable;
@@ -73,7 +74,8 @@ export default {
 
     if (
       localStorage.theme === "dark" ||
-      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       document.documentElement.classList.add("dark");
       this.darkMode = true;
@@ -97,13 +99,25 @@ export default {
   >
     <div class="flex-between container">
       <a :href="url" class="group flex items-center gap-2">
-        <img src="/images/logo.png" width="48" height="48" loading="lazy" alt="avatar" class="aspect-square w-12" />
-        <div class="text-2xl uppercase tracking-widest group-hover:text-lightTheme dark:group-hover:text-darkTheme">
+        <img
+          src="/images/logo.png"
+          width="48"
+          height="48"
+          loading="lazy"
+          alt="avatar"
+          class="aspect-square w-12"
+        />
+        <div
+          class="text-2xl uppercase tracking-widest group-hover:text-lightTheme dark:group-hover:text-darkTheme"
+        >
           {{ name }}
         </div>
       </a>
       <nav>
-        <div @click="handleToggleMenu" :class="['menu', { active: isShow }]"></div>
+        <div
+          @click="handleToggleMenu"
+          :class="['menu', { active: isShow }]"
+        ></div>
         <ul :class="{ active: isShow }">
           <li
             v-for="[link, path] in Object.entries(links)"
@@ -114,8 +128,24 @@ export default {
             <a :href="path">{{ link }}</a>
           </li>
           <li @click="toggleMode" v-auto-animate>
-            <img v-if="darkMode" src="/icons/sun.svg" width="24" height="24" loading="lazy" alt="icon" class="icons" />
-            <img v-else src="/icons/moon.svg" width="24" height="24" loading="lazy" alt="icon" class="icons" />
+            <img
+              v-if="darkMode"
+              src="/icons/sun.svg"
+              width="24"
+              height="24"
+              loading="lazy"
+              alt="icon"
+              class="icons"
+            />
+            <img
+              v-else
+              src="/icons/moon.svg"
+              width="24"
+              height="24"
+              loading="lazy"
+              alt="icon"
+              class="icons"
+            />
           </li>
         </ul>
       </nav>
