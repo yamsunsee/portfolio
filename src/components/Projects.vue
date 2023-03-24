@@ -23,7 +23,9 @@ export default {
 
     getQuantity(category) {
       if (category === "all") return `(${this.data.length})`;
-      return `(${this.data.filter((project) => project.category === category).length})`;
+      return `(${
+        this.data.filter((project) => project.category === category).length
+      })`;
     },
   },
 };
@@ -34,7 +36,12 @@ export default {
     <div class="flex-col-center container py-20">
       <h2>
         <div>Work<span>s</span></div>
-        <i>Let's see <br class="md:hidden" /><span class="highlight">some projects</span> I did!</i>
+        <i
+          >Let's see <br class="md:hidden" /><span class="highlight"
+            >some projects</span
+          >
+          I did!</i
+        >
       </h2>
       <div class="w-full">
         <div class="flex flex-col lg:flex-row lg:gap-4">
@@ -44,7 +51,8 @@ export default {
             :class="['category', current === category && 'selected']"
             @click="selectCategory(category)"
           >
-            {{ category === "all" ? "all" : category + "s" }} {{ getQuantity(category) }}
+            {{ category === "all" ? "all" : category + "s" }}
+            {{ getQuantity(category) }}
           </div>
         </div>
         <div
@@ -57,7 +65,9 @@ export default {
             class="flex rounded border p-4 dark:border-neutral-800 dark:bg-neutral-800 md:p-8"
           >
             <div class="flex flex-col gap-8">
-              <div class="flex flex-col items-center justify-between gap-4 md:flex-row md:gap-0">
+              <div
+                class="flex flex-col items-center justify-between gap-4 md:flex-row md:gap-0"
+              >
                 <div class="flex flex-col gap-2">
                   <div
                     class="text-shadow-light dark:text-shadow text-center font-sub text-5xl capitalize tracking-widest text-lightTheme md:text-left md:text-6xl"
@@ -93,7 +103,10 @@ export default {
                 loading="lazy"
               />
               <p class="flex-grow">
-                <span v-for="(text, index) in project.descriptions.split('*')" :key="text">
+                <span
+                  v-for="(text, index) in project.descriptions.split('*')"
+                  :key="text"
+                >
                   <i :class="{ 'font-bold': index === 1 }">{{ text }}</i>
                 </span>
               </p>
@@ -102,7 +115,7 @@ export default {
               >
                 <a
                   v-if="project.download"
-                  :href="`https://github.com/yamsunsee/${project.lowercase}/${project.download}`"
+                  :href="project.download"
                   target="_blank"
                   class="button theme lg:w-full xl:w-fit"
                   >Download</a

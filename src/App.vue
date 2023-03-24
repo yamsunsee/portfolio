@@ -19,7 +19,7 @@ export default {
         {
           title: "Yamonus",
           lowercase: "electron-yamonus",
-          download: "raw/main/Yamonus-2.1.0-setup.exe",
+          download: "https://j2c.cc/yamonus",
           descriptions:
             "A *desktop task management tool* follows a 'mouse-free' style, enabling users to easily add, filter, edit, remove, and manage recurring tasks using simple commands.",
           category: "personal project",
