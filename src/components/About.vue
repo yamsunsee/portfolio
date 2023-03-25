@@ -28,7 +28,7 @@ export default {
       maxSpeed: "fast",
       initSpeed: "normal",
       direction: 45,
-      keep: true,
+      keep: false,
     });
   },
 };
